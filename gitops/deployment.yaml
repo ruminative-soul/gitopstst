@@ -2,22 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: solar-system
-  name: solar-system
+    app: versioning
+  name: versioning
 spec:
   replicas: 5
   selector:
     matchLabels:
-      app: solar-system
+      app: versioning
   strategy: {}
   template:
     metadata:
       labels:
-        app: solar-system
+        app: versioning
     spec:
       containers:
-      - image: mdhack/strategy:v3
-        name: solar-system
+      - image: gitops/strategy:v2
+        name: versioning
         imagePullPolicy: Always
         ports: 
         - containerPort: 80
